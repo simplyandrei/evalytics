@@ -1,0 +1,20 @@
+[
+    {
+    "id": 1,
+    "title": "Name",
+    "type": "title",
+    "content": "Evalytics"
+  },
+  {
+    "id": 2,
+    "title": "Caution",
+    "type": "announcement",
+    "content": "We will be performing server updates on Friday at 10 PM."
+  },
+  {
+    "id": 3,
+    "title": "Connection Error",
+    "type": "warning",
+    "content": "Unable to connect to the database. Please check your internet."
+  }
+]
