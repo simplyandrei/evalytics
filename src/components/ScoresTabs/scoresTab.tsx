@@ -7,14 +7,16 @@ interface ScoresTabProps {
     onUpdateTabWeight: (id: number, weight: number) => void;
     onDeleteTab: (id: number) => void;
     onAddScore: (tabId: number, label: string, score: number, totalScore: number) => void;
+    onEditScore: (tabId: number, scoreId: number, label: string, score: number, totalScore: number) => void;
+    onDeleteScore: (tabId: number, scoreId: number) => void;
 }
 
-export default function ScoresTab({ tabs, onUpdateTabName, onUpdateTabWeight, onDeleteTab, onAddScore }: ScoresTabProps) {
+export default function ScoresTab({ tabs, onUpdateTabName, onUpdateTabWeight, onDeleteTab, onAddScore, onEditScore, onDeleteScore }: ScoresTabProps) {
     return (
         <>
             <div className="d-flex flex-wrap justify-content-center gap-3 mt-4">
                 {tabs.map(tab => (
-                    <Tab key={tab.id} tab={tab} onUpdateName={onUpdateTabName} onUpdateWeight={onUpdateTabWeight} onDelete={onDeleteTab} onAddScore={onAddScore} />
+                    <Tab key={tab.id} tab={tab} onUpdateName={onUpdateTabName} onUpdateWeight={onUpdateTabWeight} onDelete={onDeleteTab} onAddScore={onAddScore} onEditScore={onEditScore} onDeleteScore={onDeleteScore} />
                 ))}
             </div>
         </>
