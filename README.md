@@ -1,73 +1,40 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Logo](https://github.com/simplyandrei/evalytics/blob/main/src/assets/gifs/Evalytics%20Banner.gif?raw=true)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Evalytics by Andrei
 
-## React Compiler
+**Evalytics** is a web-based grade calculation tool designed to help students estimate their academic performance with accuracy and ease. By inputting raw scores, users can instantly view their transmuted grades based on the official **Cebu Institute of Technology - University** (CIT-U) Transmutation Table.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## Badges
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+![GitHub repo size](https://img.shields.io/github/repo-size/simplyandrei/evalytics)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/simplyandrei/evalytics)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Demo
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+#### Step 1: Define Your Grading Components
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Start by setting up the structure of your course. Create Tabs that correspond to the grading criteria outlined in your syllabus (e.g., Quizzes, Midterms, Projects). For each tab, assign the specific percentage weight it contributes to the final grade.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+![STEP-1](https://github.com/simplyandrei/evalytics/blob/main/src/assets/gifs/STEP-1.gif?raw=true)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+#### Step 2: Input Raw Scores
+
+Once your tabs are set up, click into a specific category to start logging your performance. Add a descriptive label for the activity (e.g., "Quiz 1F") along with your raw score and the total possible points.
+
+![STEP-2](https://github.com/simplyandrei/evalytics/blob/main/src/assets/gifs/STEP-2.gif?raw=true)
+
+#### Step 3: Edit & Adjust
+
+Evalytics is designed to be flexible. If you made a typo or need to update a score after a regrade, simply click on any existing Tab or Score entry to modify it. The system allows you to change weights, labels, or raw scores on the fly.
+
+![STEP-3](https://github.com/simplyandrei/evalytics/blob/main/src/assets/gifs/STEP-3.gif?raw=true)
+
+#### Step 4: View Transmuted Results
+
+As you input data, the application calculates your weighted average in real-time and runs it through the CIT-U Transmutation Table. Your estimated final grade is instantly displayed, giving you a clear picture of your academic standing.
+
+![STEP-4](https://github.com/simplyandrei/evalytics/blob/main/src/assets/gifs/STEP-4.png?raw=true)
